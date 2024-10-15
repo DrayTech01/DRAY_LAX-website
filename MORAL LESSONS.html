@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moral Advice for Students</title>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <h1>Moral Wisdom for Students</h1>
+        <p>Your guide to ethical decision-making and positive behavior.</p>
+    </header>
+
+    <main>
+        <section class="advice-container">
+            <h2>Words of Wisdom</h2>
+            <div class="advice">
+                <p><strong>1. Integrity Matters:</strong> Always be honest and truthful. Your reputation is built on your integrity.</p>
+            </div>
+            <div class="advice">
+                <p><strong>2. Respect Others:</strong> Treat your peers, teachers, and everyone around you with respect and kindness.</p>
+            </div>
+            <div class="advice">
+                <p><strong>3. Be Responsible:</strong> Take responsibility for your actions and decisions. Own up to your mistakes and learn from them.</p>
+            </div>
+            <div class="advice">
+                <p><strong>4. Value Education:</strong> Education is a privilege. Make the most of it by being curious and engaged.</p>
+            </div>
+            <div class="advice">
+                <p><strong>5. Help Others:</strong> Offer help to classmates who are struggling. Collaboration and support strengthen community.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Always strive to become a better version of yourself!</p>
+        </footer>
+    </main>
+
+    
+</body>
+</html>
+
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.advice-container {
+    margin: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.advice {
+    padding: 10px;
+    border-left: 4px solid #35424a;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #35424a;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #35424a;
+    color: white;
+}
+</style>
+
+<script>
+
+    // script.js  
+
+// Array of moral advice statements  
+const adviceList = [  
+    "Integrity matters: Always be honest and truthful.",  
+    "Respect others: Treat your peers and teachers with kindness.",  
+    "Be responsible: Take ownership of your actions and learn from mistakes.",  
+    "Value education: Make the most of your learning opportunities.",  
+    "Help others: Offer support to classmates who need it.",  
+    "Stay positive: A positive attitude can change everything.",  
+    "Be humble: Acknowledge your strengths but recognize your weaknesses.",  
+    "Practice empathy: Try to understand things from others' perspectives."  
+];  
+
+// Function to display a random piece of advice  
+function showRandomAdvice() {  
+    const randomIndex = Math.floor(Math.random() * adviceList.length); // Generate a random index  
+    const adviceElement = document.getElementById("randomAdvice"); // Get the advice element  
+    adviceElement.innerHTML = `<p>${adviceList[randomIndex]}</p>`; // Update the advice element with random advice  
+}  
+
+// Event listener for the button  
+document.getElementById("adviceButton").addEventListener("click", showRandomAdvice);
+</script>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Image Transition Slider</title>  
+     
+</head>  
+<body>  
+    <div class="slider">  
+        <div class="slides">  
+            <div class="slide active">  
+                <img src="IMG_5368.JPG" alt="Image 1">  
+            </div>  
+            <div class="slide">  
+                <img src="DRAY.JPEG" alt="Image 2">  
+            </div>  
+            <div class="slide">  
+                <img src="edu.jpg" alt="Image 3">  
+            </div>  
+        </div>  
+        <button class="nav-button prev" id="prev">❮</button>  
+        <button class="nav-button next" id="next">❯</button>  
+    </div>  
+   
+</body>  
+</html>
+
+<style>
+body {  
+    margin: 0;  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f4;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+}  
+
+.slider {  
+    position: relative;  
+    width: 80%;  
+    max-width: 200px;  
+    overflow: hidden;  
+    border-radius: 10px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);  
+}  
+
+.slides {  
+    display: flex;  
+    transition: transform 0.1s ease-in-out;  
+}  
+
+.slide {  
+    min-width: 100%;  
+    opacity: 0;  
+    transition: opacity 0.5s ease-in-out;  
+}  
+
+.slide img {  
+    width: 100%;  
+    border-radius: 10px;  
+}  
+
+.slide.active {  
+    opacity: 1;  
+}  
+
+.nav-button {  
+    position: absolute;  
+    top: 50%;  
+    transform: translateY(-50%);  
+    background-color: rgba(255, 255, 255, 0.7);  
+    border: none;  
+    padding: 10px;  
+    cursor: pointer;  
+    font-size: 24px;  
+    border-radius: 5px;  
+}  
+
+.prev {  
+    left: 10px;  
+}  
+
+.next {  
+    right: 10px;  
+}  
+
+.nav-button:hover {  
+    background-color: rgba(255, 255, 255, 1);  
+}
+</style>
+
+<script>
+    let currentIndex = 0;  
+const slides = document.querySelectorAll('.slide');  
+const totalSlides = slides.length;  
+
+function showSlide(index) {  
+    slides.forEach((slide, i) => {  
+        slide.classList.remove('active');  
+        if (i === index) {  
+            slide.classList.add('active');  
+        }  
+    });  
+}  
+
+function nextSlide() {  
+    currentIndex = (currentIndex - 1) % totalSlides; // Loop back to the first slide  
+    showSlide(currentIndex);  
+}  
+
+function prevSlide() {  
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Loop back to the last slide  
+    showSlide(currentIndex);  
+}  
+
+document.getElementById('next').addEventListener('click', nextSlide);  
+document.getElementById('prev').addEventListener('click', prevSlide);  
+
+// Auto-transition every 3 seconds  
+setInterval(nextSlide, 3000);  
+
+// Show the first slide initially  
+showSlide(currentIndex);
+</script>

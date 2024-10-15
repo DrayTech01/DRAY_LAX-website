@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    padding: 20px;
+}
+
+.logo h1 {
+    color: white;
+    margin: 0;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.overlay {
+    text-align: center;
+    background: #007BFF;
+    color: white;
+    padding: 50px 20px;
+    margin: 20px 0;
+}
+
+.overlay h3 {
+    margin: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.dropbtn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.9s;
+}
+
+.dropbtn:hover {
+    background-color: #218838;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fdfdfd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #007BFF;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.quotes {
+    padding: 20px;
+    background: #b83939;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.quotes p {
+    margin: 10px 0;
+}
+.quotes {  
+    border: 2px solid #007BFF; /* Change to your preferred border color */  
+    border-radius: 10px; /* Rounded corners */  
+    padding: 10px; /* Space inside the border */  
+    margin: 150px; /* Space outside the border */  
+    background-color: white; /* Background inside the section */  
+    opacity: 9; /* Start as invisible for animation */  
+    transform: translateY(20px); /* Start slightly lower in the Y-axis */  
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation effects */  
+}  
+
+  
+  
+.motives {  
+  border: 2px solid #007BFF; /* Change to your preferred border color */  
+  border-radius: 10px; /* Rounded corners */  
+  padding: 10px; /* Space inside the border */  
+  margin: 150px; /* Space outside the border */  
+  background-color: white; /* Background inside the section */  
+  opacity: 9; /* Start as invisible for animation */  
+  transform: translateY(20px); /* Start slightly lower in the Y-axis */  
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation effects */  
+}  
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }

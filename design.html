@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Advisor Portal</title>
+  <link rel="stylesheet" href="stylnes.css">
+</head>
+<body>
+  <header>
+    <h1>Student Advisor Portal</h1>
+    <nav>
+      <ul>
+        <li><a href="#" id="studentLoginLink">Student Login</a></li>
+        <li><a href="#" id="advisorLoginLink">Advisor Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div id="studentSection" class="section" style="display:none;">
+      <h2>Student Section</h2>
+      <form id="studentLoginForm">
+        <label for="studentUsername">Username:</label>
+        <input type="text" id="studentUsername" name="username">
+        <label for="studentPassword">Password:</label>
+        <input type="password" id="studentPassword" name="password">
+        <button type="submit">Login</button>
+      </form>
+      <div id="studentDashboard" style="display:none;">
+        <h3>Welcome, [Student Name]</h3>
+        <p>Profile Management</p>
+        <p>Course Catalog</p>
+        <p>Advising Appointment Scheduling</p>
+        <p>Degree Audit</p>
+        <p>Messaging System</p>
+        <p>Resources</p>
+      </div>
+    </div>
+    
+    <div id="advisorSection" class="section" style="display:none;">
+      <h2>Advisor Section</h2>
+      <form id="advisorLoginForm">
+        <label for="advisorUsername">Username:</label>
+        <input type="text" id="advisorUsername" name="username">
+        <label for="advisorPassword">Password:</label>
+        <input type="password" id="advisorPassword" name="password">
+        <button type="submit">Login</button>
+      </form>
+      <div id="advisorDashboard" style="display:none;">
+        <h3>Welcome, [Advisor Name]</h3>
+        <p>Student Dashboard</p>
+        <p>Appointment Management</p>
+        <p>Notes and Recommendations</p>
+        <p>Reporting</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Student Advisor Portal. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  .container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .section {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s;
+  }
+  
+  .section h2 {
+    color: #333;
+  }
+  
+  .section p, .section ul {
+    color: #666;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+
+
+
+
+<script>
+document.getElementById('studentLoginLink').addEventListener('click', function() {
+    toggleSection('studentSection');
+  });
+  
+  document.getElementById('advisorLoginLink').addEventListener('click', function() {
+    toggleSection('advisorSection');
+  });
+  
+  document.getElementById('studentLoginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    document.getElementById('studentDashboard').style.display = 'block';
+  });
+  
+  document.getElementById('advisorLoginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    document.getElementById('advisorDashboard').style.display = 'block';
+  });
+  
+  function toggleSection(sectionId) {
+    var sections = document.querySelectorAll('.section');
+    sections.forEach(function(section) {
+      section.style.display = 'none';
+    });
+    
+    var section = document.getElementById(sectionId);
+    section.style.display = 'block';
+  }
+</script>  

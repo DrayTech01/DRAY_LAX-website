@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Student Advisor</title>
+    <link rel="stylesheet" href="stylesl.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Christian Student Advisor</h1>
+        <form id="adviceForm">
+            <label for="question">Ask for advice:</label>
+            <input type="text" id="question" name="question" required>
+            <button type="submit">Get Advice</button>
+        </form>
+        <div id="advice"></div>
+    </div>
+    <script src="sclript.js"></script>
+</body>
+</html>
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#advice {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+</style>
+
+<script>
+document.getElementById('adviceForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    const question = document.getElementById('question').value; // Get the user's question
+    
+    // Sending the question to the server using fetch API
+    fetch('advice.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded' // Specify content type
+        },
+        body: 'question=' + encodeURIComponent(question) // Encode the question for URL
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText); // Handle HTTP errors
+        }
+        return response.text(); // Convert response to text
+    })
+    .then(data => {
+        document.getElementById('advice').innerText = data; // Display the advice
+    })
+    .catch(error => {
+        console.error('Error:', error); // Log any errors
+        document.getElementById('advice').innerText = "Sorry, there was an error getting advice."; // Show error message to user
+    });
+});
+</script>

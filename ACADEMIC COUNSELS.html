@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Academic Advising System</title>
+    
+</head>
+<script src="ACADEM.js"></script> 
+ <link href="ACADEM.css" type="text/css" rel="stylesheet" /> 
+<body>
+    <header>
+        <h1>ACADEMIC COUNSELLING UNIT</h1>
+    </header>
+    <main>
+        <section id="advising-form">
+            <h2>Request Advising</h2>
+            <form id="advisingRequestForm">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+                
+                <label for="studentID">Student ID:</label>
+                <input type="text" id="studentID" name="studentID" required>
+                
+                <label for="advisor">Advisor:</label>
+                <select id="advisor" name="advisor" required>
+                    <option value="advisor1">Advisor 1</option>
+                    <option value="advisor2">Advisor 2</option>
+                    <option value="advisor3">Advisor 3</option>
+                </select>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="advising-requests">
+            <h2>Advising Requests</h2>
+            <ul id="requestsList"></ul>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+
+    <a href="index.html">back</a>
+</body>
+</html>
+
+
+
+
